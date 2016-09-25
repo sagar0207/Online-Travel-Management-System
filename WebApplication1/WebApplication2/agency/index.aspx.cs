@@ -9,13 +9,13 @@ using System.Data.SqlTypes;
 using System.Web.Configuration;
 using System.Web.SessionState;
 
-namespace WebApplication2
+namespace WebApplication2.agency
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           string str = Request.QueryString["msg"];
+            string str = Request.QueryString["msg"];
             if (!string.IsNullOrEmpty(str))
             {
                 hidden_lbl.Text = str;
@@ -28,7 +28,7 @@ namespace WebApplication2
                 register_lbl_hidden.Text = str2;
             }
 
-            
+
 
         }
 
@@ -45,8 +45,8 @@ namespace WebApplication2
 
             cmd.Connection = conn;
 
-            cmd.CommandText = "select * from users where username=@u and password=@p and type='USER'";
-            cmd.Parameters.AddWithValue("@u",username);
+            cmd.CommandText = "select * from users where username=@u and password=@p and type='AGENCY'";
+            cmd.Parameters.AddWithValue("@u", username);
             cmd.Parameters.AddWithValue("@p", password);
 
             SqlDataReader rdr;
@@ -54,12 +54,12 @@ namespace WebApplication2
 
             rdr = cmd.ExecuteReader();
 
-            if(rdr.Read())
+            if (rdr.Read())
             {
-                Session["username"] =rdr["username"];
-                Session["type"]= rdr["type"];
+                Session["username"] = rdr["username"];
+                Session["type"] = rdr["type"];
                 Session["id"] = rdr["id"];
-                Response.Redirect("home.aspx");
+                Response.Redirect("a_home.aspx");
             }
             else
             {
@@ -80,30 +80,30 @@ namespace WebApplication2
 
             SqlConnection conn = new SqlConnection(constr);
 
-            
 
-           string sql_ins = "insert into users(firstname,lastname,username,password,contact,email,type) values(@fn,@ln,@un,@ps,@con,@mail,@type)";
-            
-            SqlCommand cmd = new SqlCommand(sql_ins,conn);
+
+            string sql_ins = "insert into users(firstname,lastname,username,password,contact,email,type) values(@fn,@ln,@un,@ps,@con,@mail,@type)";
+
+            SqlCommand cmd = new SqlCommand(sql_ins, conn);
             cmd.Parameters.AddWithValue("@fn", r_fname);
             cmd.Parameters.AddWithValue("@ln", r_lname);
             cmd.Parameters.AddWithValue("@un", r_uname);
             cmd.Parameters.AddWithValue("@ps", r_pass);
             cmd.Parameters.AddWithValue("@con", r_contact);
             cmd.Parameters.AddWithValue("@mail", r_mail);
-            cmd.Parameters.AddWithValue("@type", "USER");
+            cmd.Parameters.AddWithValue("@type", "AGENCY");
 
-            
-                conn.Open();
-                int ad = cmd.ExecuteNonQuery();
-                if(ad>0)
-                {
-                    Response.Redirect("index.aspx?m=Account created successfully!");
-                }
-                else
-                {
-                    Response.Redirect("index.aspx?m=Error Occured ! Try again later");
-                }
+
+            conn.Open();
+            int ad = cmd.ExecuteNonQuery();
+            if (ad > 0)
+            {
+                Response.Redirect("index.aspx?m=Account created successfully!");
+            }
+            else
+            {
+                Response.Redirect("index.aspx?m=Error Occured ! Try again later");
+            }
             conn.Close();
 
         }

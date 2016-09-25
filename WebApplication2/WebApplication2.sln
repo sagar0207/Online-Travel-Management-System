@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication2", "WebApplication2\WebApplication2.csproj", "{60D877B7-BDDA-4EEA-86BB-687654F2E528}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVC_MOVIE", "WebApplication2\MVC_MOVIE.csproj", "{D322721F-2A8B-4881-AB29-041A6D549E02}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{60D877B7-BDDA-4EEA-86BB-687654F2E528}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{60D877B7-BDDA-4EEA-86BB-687654F2E528}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{60D877B7-BDDA-4EEA-86BB-687654F2E528}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{60D877B7-BDDA-4EEA-86BB-687654F2E528}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D322721F-2A8B-4881-AB29-041A6D549E02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D322721F-2A8B-4881-AB29-041A6D549E02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D322721F-2A8B-4881-AB29-041A6D549E02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D322721F-2A8B-4881-AB29-041A6D549E02}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebApplication2 {
+namespace WebApplication2.agency {
     
     
     public partial class WebForm1 {
